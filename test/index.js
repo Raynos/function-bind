@@ -194,7 +194,7 @@ test('with a context', function (t) {
     t.end();
 });
 
-test('bound function length', function (t) {
+test('bound function length', { skip: true }, function (t) {
     t.test('sets a correct length without thisArg', function (st) {
         var subject = functionBind.call(function (a, b, c) { return a + b + c; });
         st.equal(subject.length, 3);
