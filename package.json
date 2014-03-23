@@ -23,14 +23,7 @@
     "url": "http://github.com/Raynos/function-bind/raw/master/LICENSE"
   }],
   "scripts": {
-    "test": "node ./test/index.js",
-    "start": "node ./index.js",
-    "watch": "nodemon -w ./index.js index.js",
-    "travis-test": "istanbul cover ./test/index.js && ((cat coverage/lcov.info | coveralls) || exit 0)",
-    "cover": "istanbul cover --report none --print detail ./test/index.js",
-    "view-cover": "istanbul report html && google-chrome ./coverage/index.html",
-    "test-browser": "testem-browser ./test/browser/index.js",
-    "testem": "testem-both -b=./test/browser/index.js"
+    "test": "node test/index.js"
   },
   "testling": {
     "files": "test/index.js",
