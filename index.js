@@ -1,12 +1,14 @@
-var ERROR_MESSAGE = "Function.prototype.bind called on incompatible "
-var slice = Array.prototype.slice
+var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+var slice = Array.prototype.slice;
+var toStr = Object.prototype.toString;
+var funcType = '[object Function]';
 
 module.exports = bind
 
 function bind(that) {
     var target = this
-    if (typeof target !== "function") {
-        throw new TypeError(ERROR_MESSAGE + target)
+    if (typeof target !== 'function' || toStr.call(target) !== funcType) {
+        throw new TypeError(ERROR_MESSAGE + target);
     }
     var args = slice.call(arguments, 1)
 
