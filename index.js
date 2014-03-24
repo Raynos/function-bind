@@ -3,34 +3,48 @@ var slice = Array.prototype.slice;
 var toStr = Object.prototype.toString;
 var funcType = '[object Function]';
 
-module.exports = bind
+module.exports = bind;
 
 function bind(that) {
-    var target = this
+    var target = this;
     if (typeof target !== 'function' || toStr.call(target) !== funcType) {
         throw new TypeError(ERROR_MESSAGE + target);
     }
-    var args = slice.call(arguments, 1)
+    var args = slice.call(arguments, 1);
 
-    return function bound() {
+    var binder = function () {
         if (this instanceof bound) {
-            var F = function () {}
-            F.prototype = target.prototype
-            var self = new F()
-
             var result = target.apply(
-                self,
+                that,
                 args.concat(slice.call(arguments))
-            )
+            );
             if (Object(result) === result) {
-                return result
+                return result;
             }
-            return self
+            return this;
         } else {
             return target.apply(
                 that,
                 args.concat(slice.call(arguments))
-            )
+            );
         }
+    };
+
+    var boundLength = Math.max(0, target.length - args.length);
+    var boundArgs = [];
+    for (var i = 0; i < boundLength; i++) {
+        boundArgs.push("$" + i);
     }
+
+    var bound = Function("binder", "return function (" + boundArgs.join(",") + "){return binder.apply(this,arguments)}")(binder);
+
+    if (target.prototype) {
+        function Empty() {}
+        Empty.prototype = target.prototype;
+        bound.prototype = new Empty();
+        Empty.prototype = null;
+    }
+
+    return bound;
 }
+
