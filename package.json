@@ -16,14 +16,17 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tape": "~2.12.3"
+    "tape": "~2.12.3",
+    "covert": "~0.4.0"
   },
   "licenses": [{
     "type": "MIT",
     "url": "http://github.com/Raynos/function-bind/raw/master/LICENSE"
   }],
   "scripts": {
-    "test": "node test/index.js"
+    "test": "node test/index.js",
+    "coverage": "covert test/*.js",
+    "coverage-quiet": "covert test/*.js --quiet"
   },
   "testling": {
     "files": "test/index.js",
