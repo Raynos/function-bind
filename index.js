@@ -15,7 +15,7 @@ function bind(that) {
     var binder = function () {
         if (this instanceof bound) {
             var result = target.apply(
-                that,
+                this,
                 args.concat(slice.call(arguments))
             );
             if (Object(result) === result) {

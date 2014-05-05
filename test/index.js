@@ -191,6 +191,19 @@ test('with a context', function (t) {
         st.end();
     });
 
+    t.test('has the new instance\'s context when called as a constructor', function (st) {
+        var actualContext;
+        var expectedContext = { foo: 'bar' };
+        var namespace = {
+            Func: functionBind.call(function () {
+                actualContext = this;
+            }, expectedContext)
+        };
+        var result = new namespace.Func();
+        st.notEqual(actualContext, expectedContext);
+        st.end();
+    });
+
     t.end();
 });
 
