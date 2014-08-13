@@ -17,7 +17,7 @@
   "dependencies": {},
   "devDependencies": {
     "tape": "~2.14.0",
-    "covert": "~0.4.0"
+    "covert": "~1.0.0"
   },
   "licenses": [{
     "type": "MIT",
