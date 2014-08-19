@@ -25,7 +25,7 @@
     "url": "http://github.com/Raynos/function-bind/raw/master/LICENSE"
   }],
   "scripts": {
-    "test": "npm run lint && node test/index.js",
+    "test": "npm run lint && node test/index.js && npm run coverage-quiet",
     "coverage": "covert test/*.js",
     "coverage-quiet": "covert test/*.js --quiet",
     "lint": "jscs *.js */*.js"
