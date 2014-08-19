@@ -211,36 +211,42 @@ test('bound function length', function (t) {
     t.test('sets a correct length without thisArg', function (st) {
         var subject = functionBind.call(function (a, b, c) { return a + b + c; });
         st.equal(subject.length, 3);
+        st.equal(subject(1, 2, 3), 6);
         st.end();
     });
 
     t.test('sets a correct length with thisArg', function (st) {
         var subject = functionBind.call(function (a, b, c) { return a + b + c; }, {});
         st.equal(subject.length, 3);
+        st.equal(subject(1, 2, 3), 6);
         st.end();
     });
 
     t.test('sets a correct length without thisArg and first argument', function (st) {
         var subject = functionBind.call(function (a, b, c) { return a + b + c; }, undefined, 1);
         st.equal(subject.length, 2);
+        st.equal(subject(2, 3), 6);
         st.end();
     });
 
     t.test('sets a correct length with thisArg and first argument', function (st) {
         var subject = functionBind.call(function (a, b, c) { return a + b + c; }, {}, 1);
         st.equal(subject.length, 2);
+        st.equal(subject(2, 3), 6);
         st.end();
     });
 
     t.test('sets a correct length without thisArg and too many arguments', function (st) {
         var subject = functionBind.call(function (a, b, c) { return a + b + c; }, undefined, 1, 2, 3, 4);
         st.equal(subject.length, 0);
+        st.equal(subject(), 6);
         st.end();
     });
 
     t.test('sets a correct length with thisArg and too many arguments', function (st) {
         var subject = functionBind.call(function (a, b, c) { return a + b + c; }, {}, 1, 2, 3, 4);
         st.equal(subject.length, 0);
+        st.equal(subject(), 6);
         st.end();
     });
 });
