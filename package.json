@@ -7,9 +7,11 @@
   "repository": "git://github.com/Raynos/function-bind.git",
   "main": "index",
   "homepage": "https://github.com/Raynos/function-bind",
-  "contributors": [{
-    "name": "Raynos"
-  }],
+  "contributors": [
+    {
+      "name": "Raynos"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/Raynos/function-bind/issues",
     "email": "raynos2@gmail.com"
@@ -18,12 +20,14 @@
   "devDependencies": {
     "tape": "~2.14.0",
     "covert": "~1.0.0",
-    "jscs": "~1.5.9"
+    "jscs": "~1.6.0"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "http://github.com/Raynos/function-bind/raw/master/LICENSE"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/function-bind/raw/master/LICENSE"
+    }
+  ],
   "scripts": {
     "test": "npm run lint && node test/index.js && npm run coverage-quiet",
     "coverage": "covert test/*.js",
