@@ -3,7 +3,9 @@ var slice = Array.prototype.slice;
 var toStr = Object.prototype.toString;
 var funcType = '[object Function]';
 
-module.exports = bind;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = bind;
+}
 
 function bind(that) {
     var target = this;
