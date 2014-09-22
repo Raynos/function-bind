@@ -1,7 +1,7 @@
 # function-bind
 
 <!--
-    [![build status][1]][2]
+    [![build status][travis-svg]][travis-url]
     [![NPM version][3]][4]
     [![Coverage Status][5]][6]
     [![gemnasium Dependency Status][7]][8]
@@ -31,8 +31,8 @@ Function.prototype.bind = require("function-bind")
 
 ## MIT Licenced
 
-  [1]: https://secure.travis-ci.org/Raynos/function-bind.png
-  [2]: https://travis-ci.org/Raynos/function-bind
+  [travis-svg]: https://travis-ci.org/Raynos/function-bind.svg
+  [travis-url]: https://travis-ci.org/Raynos/function-bind
   [3]: https://badge.fury.io/js/function-bind.png
   [4]: https://badge.fury.io/js/function-bind
   [5]: https://coveralls.io/repos/Raynos/function-bind/badge.png
