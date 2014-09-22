@@ -2,7 +2,7 @@
 
 <!--
     [![build status][travis-svg]][travis-url]
-    [![NPM version][3]][4]
+    [![NPM version][npm-badge-svg]][npm-url]
     [![Coverage Status][5]][6]
     [![gemnasium Dependency Status][7]][8]
     [![Dependency status][deps-svg]][deps-url]
@@ -34,8 +34,8 @@ Function.prototype.bind = require("function-bind")
 
   [travis-svg]: https://travis-ci.org/Raynos/function-bind.svg
   [travis-url]: https://travis-ci.org/Raynos/function-bind
-  [3]: https://badge.fury.io/js/function-bind.png
-  [4]: https://badge.fury.io/js/function-bind
+  [npm-badge-svg]: https://badge.fury.io/js/function-bind.svg
+  [npm-url]: https://npmjs.org/package/function-bind
   [5]: https://coveralls.io/repos/Raynos/function-bind/badge.png
   [6]: https://coveralls.io/r/Raynos/function-bind
   [7]: https://gemnasium.com/Raynos/function-bind.png
