@@ -6,6 +6,7 @@
     [![Coverage Status][5]][6]
     [![gemnasium Dependency Status][7]][8]
     [![Dependency status][deps-svg]][deps-url]
+    [![Dev Dependency status][dev-deps-svg]][dev-deps-url]
 -->
 
 <!-- [![browser support][11]][12] -->
@@ -41,5 +42,7 @@ Function.prototype.bind = require("function-bind")
   [8]: https://gemnasium.com/Raynos/function-bind
   [deps-svg]: https://david-dm.org/Raynos/function-bind.svg
   [deps-url]: https://david-dm.org/Raynos/function-bind
+  [dev-deps-svg]: https://david-dm.org/Raynos/function-bind/dev-status.svg
+  [dev-deps-url]: https://david-dm.org/Raynos/function-bind#info=devDependencies
   [11]: https://ci.testling.com/Raynos/function-bind.png
   [12]: https://ci.testling.com/Raynos/function-bind
