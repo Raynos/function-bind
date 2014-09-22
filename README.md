@@ -5,7 +5,7 @@
     [![NPM version][3]][4]
     [![Coverage Status][5]][6]
     [![gemnasium Dependency Status][7]][8]
-    [![Davis Dependency status][9]][10]
+    [![Dependency status][deps-svg]][deps-url]
 -->
 
 <!-- [![browser support][11]][12] -->
@@ -39,7 +39,7 @@ Function.prototype.bind = require("function-bind")
   [6]: https://coveralls.io/r/Raynos/function-bind
   [7]: https://gemnasium.com/Raynos/function-bind.png
   [8]: https://gemnasium.com/Raynos/function-bind
-  [9]: https://david-dm.org/Raynos/function-bind.png
-  [10]: https://david-dm.org/Raynos/function-bind
+  [deps-svg]: https://david-dm.org/Raynos/function-bind.svg
+  [deps-url]: https://david-dm.org/Raynos/function-bind
   [11]: https://ci.testling.com/Raynos/function-bind.png
   [12]: https://ci.testling.com/Raynos/function-bind
