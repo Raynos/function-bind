@@ -10,6 +10,10 @@
   "contributors": [
     {
       "name": "Raynos"
+    },
+    {
+      "name": "Jordan Harband",
+      "url": "https://github.com/ljharb"
     }
   ],
   "bugs": {
