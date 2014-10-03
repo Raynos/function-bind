@@ -41,7 +41,7 @@ function bind(that) {
     var bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
 
     if (target.prototype) {
-        function Empty() {}
+        var Empty = function Empty() {};
         Empty.prototype = target.prototype;
         bound.prototype = new Empty();
         Empty.prototype = null;
