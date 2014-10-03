@@ -100,9 +100,9 @@ test('without a context', function (t) {
 
         st.test('object from bound constructor is instance of original and bound constructor', function (sst) {
             var A = function (x) {
-                this.name = x || "A";
+                this.name = x || 'A';
             };
-            var B = functionBind.call(A, null, "B");
+            var B = functionBind.call(A, null, 'B');
 
             var result = new B();
             sst.ok(result instanceof B, 'result is instance of bound constructor');
