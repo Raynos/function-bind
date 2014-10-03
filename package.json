@@ -2,7 +2,12 @@
   "name": "function-bind",
   "version": "1.0.0",
   "description": "Implementation of function.prototype.bind",
-  "keywords": [],
+  "keywords": [
+    "function",
+    "bind",
+    "shim",
+    "es5"
+  ],
   "author": "Raynos <raynos2@gmail.com>",
   "repository": "git://github.com/Raynos/function-bind.git",
   "main": "index",
