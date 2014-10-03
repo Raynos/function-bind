@@ -1,7 +1,7 @@
 {
   "name": "function-bind",
   "version": "1.0.0",
-  "description": "Implementation of function.prototype.bind",
+  "description": "Implementation of Function.prototype.bind",
   "keywords": [
     "function",
     "bind",
