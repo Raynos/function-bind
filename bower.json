@@ -1,0 +1,32 @@
+{
+  "name": "umd-function-bind",
+  "main": "index.js",
+  "version": "1.0.2",
+  "homepage": "https://github.com/ry5n/umd-function-bind",
+  "authors": [
+    "Ryan Frederick <ryan@ryanfrederick.com>"
+  ],
+  "description": "UMD polyfill for Function.prototype.bind",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "function",
+    "bind",
+    "shim",
+    "es5",
+    "umd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
