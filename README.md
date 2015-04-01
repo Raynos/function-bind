@@ -1,4 +1,4 @@
-# function-bind
+# umd-function-bind
 
 <!--
     [![build status][travis-svg]][travis-url]
@@ -11,38 +11,48 @@
 
 <!-- [![browser support][11]][12] -->
 
-Implementation of function.prototype.bind
+UMD polyfill for Function.prototype.bind
 
-## Example
-
-I mainly do this for unit tests I run on phantomjs.
-PhantomJS does not have Function.prototype.bind :(
+## Usage
 
 ```js
-Function.prototype.bind = require("function-bind")
+// CommonJS
+Function.prototype.bind = Function.prototype.bind || require('umd-function-bind');
+```
+
+```js
+// AMD
+define(['umd-function-bind'], function(bind) {
+  Function.prototype.bind = Function.prototype.bind || bind;
+});
 ```
 
 ## Installation
 
-`npm install function-bind`
+- NPM: `npm install --save umd-function-bind`
+- Bower: `bower install --save umd-function-bind`
 
 ## Contributors
 
- - Raynos
+- Raynos
+- Jordan Harband
+- Ryan L. Frederick
 
-## MIT Licenced
+## Licences
 
-  [travis-svg]: https://travis-ci.org/Raynos/function-bind.svg
-  [travis-url]: https://travis-ci.org/Raynos/function-bind
-  [npm-badge-svg]: https://badge.fury.io/js/function-bind.svg
-  [npm-url]: https://npmjs.org/package/function-bind
-  [5]: https://coveralls.io/repos/Raynos/function-bind/badge.png
-  [6]: https://coveralls.io/r/Raynos/function-bind
-  [7]: https://gemnasium.com/Raynos/function-bind.png
-  [8]: https://gemnasium.com/Raynos/function-bind
-  [deps-svg]: https://david-dm.org/Raynos/function-bind.svg
-  [deps-url]: https://david-dm.org/Raynos/function-bind
-  [dev-deps-svg]: https://david-dm.org/Raynos/function-bind/dev-status.svg
-  [dev-deps-url]: https://david-dm.org/Raynos/function-bind#info=devDependencies
-  [11]: https://ci.testling.com/Raynos/function-bind.png
-  [12]: https://ci.testling.com/Raynos/function-bind
+- MIT
+
+[travis-svg]: https://travis-ci.org/Raynos/function-bind.svg
+[travis-url]: https://travis-ci.org/Raynos/function-bind
+[npm-badge-svg]: https://badge.fury.io/js/function-bind.svg
+[npm-url]: https://npmjs.org/package/function-bind
+[5]: https://coveralls.io/repos/Raynos/function-bind/badge.png
+[6]: https://coveralls.io/r/Raynos/function-bind
+[7]: https://gemnasium.com/Raynos/function-bind.png
+[8]: https://gemnasium.com/Raynos/function-bind
+[deps-svg]: https://david-dm.org/Raynos/function-bind.svg
+[deps-url]: https://david-dm.org/Raynos/function-bind
+[dev-deps-svg]: https://david-dm.org/Raynos/function-bind/dev-status.svg
+[dev-deps-url]: https://david-dm.org/Raynos/function-bind#info=devDependencies
+[11]: https://ci.testling.com/Raynos/function-bind.png
+[12]: https://ci.testling.com/Raynos/function-bind

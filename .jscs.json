@@ -3,11 +3,13 @@
 
 	"requireCurlyBraces": ["if", "else", "for", "while", "do", "try", "catch"],
 
-	"requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch", "function"],
+	"requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
 
 	"disallowSpaceAfterKeywords": [],
 
-	"requireSpacesInAnonymousFunctionExpression": { "beforeOpeningRoundBrace": true, "beforeOpeningCurlyBrace": true },
+	"requireSpacesInAnonymousFunctionExpression": {
+		"beforeOpeningCurlyBrace": true
+	},
 	"requireSpacesInNamedFunctionExpression": { "beforeOpeningCurlyBrace": true },
 	"disallowSpacesInNamedFunctionExpression": { "beforeOpeningRoundBrace": true },
 	"requireSpacesInFunctionDeclaration": { "beforeOpeningCurlyBrace": true },

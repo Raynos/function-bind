@@ -1,18 +1,23 @@
 {
-  "name": "function-bind",
-  "version": "1.0.2",
-  "description": "Implementation of Function.prototype.bind",
+  "name": "umd-function-bind",
+  "version": "1.1.0",
+  "description": "UMD polyfill for Function.prototype.bind",
   "keywords": [
     "function",
     "bind",
     "shim",
-    "es5"
+    "es5",
+    "umd"
   ],
-  "author": "Raynos <raynos2@gmail.com>",
-  "repository": "git://github.com/Raynos/function-bind.git",
+  "author": "Ryan L. Frederick <ryan@ryanfrederick.com>",
+  "repository": "git://github.com/ry5n/umd-function-bind.git",
   "main": "index",
-  "homepage": "https://github.com/Raynos/function-bind",
+  "homepage": "https://github.com/ry5n/umd-function-bind",
   "contributors": [
+    {
+      "name": "Ryan L. Frederick",
+      "url": "https://github.com/ry5n"
+    },
     {
       "name": "Raynos"
     },
@@ -22,8 +27,7 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/Raynos/function-bind/issues",
-    "email": "raynos2@gmail.com"
+    "url": "https://github.com/ry5n/umd-function-bind/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -34,7 +38,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/Raynos/function-bind/raw/master/LICENSE"
+      "url": "http://github.com/ry5n/umd-function-bind/raw/master/LICENSE"
     }
   ],
   "scripts": {
@@ -54,9 +58,9 @@
       "opera/12..latest",
       "opera/next",
       "safari/5.1..latest",
-      "ipad/6.0..latest",
-      "iphone/6.0..latest",
-      "android-browser/4.2..latest"
+      "ipad/5.0..latest",
+      "iphone/5.0..latest",
+      "android-browser/2.3..latest"
     ]
   }
 }
