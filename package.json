@@ -27,9 +27,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tape": "~3.5.0",
-    "covert": "1.0.0",
-    "jscs": "~1.11.0"
+    "tape": "^4.0.0",
+    "covert": "^1.1.0",
+    "jscs": "^1.13.1"
   },
   "licenses": [
     {
