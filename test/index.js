@@ -200,6 +200,7 @@ test('with a context', function (t) {
             }, expectedContext)
         };
         var result = new namespace.Func();
+        st.equal(result instanceof namespace.Func, true);
         st.notEqual(actualContext, expectedContext);
         st.end();
     });
