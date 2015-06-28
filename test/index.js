@@ -79,20 +79,19 @@ test('without a context', function (t) {
     });
 
     t.test('called as a constructor', function (st) {
+        var thunkify = function (value) {
+            return function () { return value; };
+        };
         st.test('returns object value', function (sst) {
             var expectedReturnValue = [1, 2, 3];
-            var Constructor = functionBind.call(function () {
-                return expectedReturnValue;
-            }, null);
+            var Constructor = functionBind.call(thunkify(expectedReturnValue), null);
             var result = new Constructor();
             sst.equal(result, expectedReturnValue);
             sst.end();
         });
 
         st.test('does not return primitive value', function (sst) {
-            var Constructor = functionBind.call(function () {
-                return 42;
-            }, null);
+            var Constructor = functionBind.call(thunkify(42), null);
             var result = new Constructor();
             sst.notEqual(result, 42);
             sst.end();
