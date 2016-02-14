@@ -1,6 +1,6 @@
 var test = require('tape');
 
-var functionBind = require('../index');
+var functionBind = require('../implementation');
 var getCurrentContext = function () { return this; };
 
 test('functionBind is a function', function (t) {
@@ -9,13 +9,11 @@ test('functionBind is a function', function (t) {
 });
 
 test('non-functions', function (t) {
-    var errorPrefix = 'Function.prototype.bind called on incompatible ';
     var nonFunctions = [true, false, [], {}, 42, 'foo', NaN, /a/g];
-    t.plan(nonFunctions.length * 2);
+    t.plan(nonFunctions.length);
     for (var i = 0; i < nonFunctions.length; ++i) {
         try { functionBind.call(nonFunctions[i]); } catch (ex) {
             t.ok(ex instanceof TypeError, 'throws when given ' + String(nonFunctions[i]));
-            t.equal(ex.message, errorPrefix + String(nonFunctions[i]), 'exception message is correct for ' + nonFunctions[i]);
         }
     }
     t.end();
@@ -250,4 +248,3 @@ test('bound function length', function (t) {
         st.end();
     });
 });
-
