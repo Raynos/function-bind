@@ -35,10 +35,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "npm run lint && npm run tests-only && npm run coverage-quiet",
+    "pretest": "npm run lint",
+    "test": "npm run tests-only",
+    "posttest": "npm run coverage -- --quiet",
     "tests-only": "node test",
     "coverage": "covert test/*.js",
-    "coverage-quiet": "covert test/*.js --quiet",
     "lint": "npm run jscs && npm run eslint",
     "jscs": "jscs *.js */*.js",
     "eslint": "eslint *.js */*.js"
