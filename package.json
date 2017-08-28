@@ -33,12 +33,7 @@
     "eslint": "^3.0.0",
     "@ljharb/eslint-config": "^6.0.0"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/Raynos/function-bind/raw/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "scripts": {
     "test": "npm run lint && npm run tests-only && npm run coverage-quiet",
     "tests-only": "node test",
