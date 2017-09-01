@@ -30,7 +30,7 @@ Function.prototype.bind = require("function-bind")
 
  - Raynos
 
-## MIT Licenced
+## MIT Licensed
 
   [travis-svg]: https://travis-ci.org/Raynos/function-bind.svg
   [travis-url]: https://travis-ci.org/Raynos/function-bind
