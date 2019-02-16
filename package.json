@@ -30,7 +30,6 @@
     "@ljharb/eslint-config": "^12.2.1",
     "covert": "^1.1.1",
     "eslint": "^4.19.1",
-    "jscs": "^3.0.7",
     "tape": "^4.10.1"
   },
   "license": "MIT",
@@ -40,9 +39,7 @@
     "posttest": "npm run coverage -- --quiet",
     "tests-only": "node test",
     "coverage": "covert test/*.js",
-    "lint": "npm run jscs && npm run eslint",
-    "jscs": "jscs *.js */*.js",
-    "eslint": "eslint *.js */*.js"
+    "lint": "eslint ."
   },
   "testling": {
     "files": "test/index.js",
