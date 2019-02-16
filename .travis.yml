@@ -2,11 +2,14 @@ language: node_js
 os:
  - linux
 node_js:
-  - "8.4"
+  - "11.10"
+  - "10.15"
+  - "9.11"
+  - "8.15"
   - "7.10"
-  - "6.11"
+  - "6.16"
   - "5.12"
-  - "4.8"
+  - "4.9"
   - "iojs-v3.3"
   - "iojs-v2.5"
   - "iojs-v1.8"
@@ -14,13 +17,13 @@ node_js:
   - "0.10"
   - "0.8"
 before_install:
-  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.6" ]; then npm install -g npm@1.3 ; elif [ "${TRAVIS_NODE_VERSION}" != "0.9" ]; then case "$(npm --version)" in 1.*) npm install -g npm@1.4.28 ;; 2.*) npm install -g npm@2 ;; esac ; fi'
-  - 'if [ "${TRAVIS_NODE_VERSION}" != "0.6" ] && [ "${TRAVIS_NODE_VERSION}" != "0.9" ]; then if [ "${TRAVIS_NODE_VERSION%${TRAVIS_NODE_VERSION#[0-9]}}" = "0" ] || [ "${TRAVIS_NODE_VERSION:0:4}" = "iojs" ]; then npm install -g npm@4.5 ; else npm install -g npm; fi; fi'
+  - 'case "${TRAVIS_NODE_VERSION}" in 0.*) export NPM_CONFIG_STRICT_SSL=false ;; esac'
+  - 'nvm install-latest-npm'
 install:
-  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.6" ]; then nvm install 0.8 && npm install -g npm@1.3 && npm install -g npm@1.4.28 && npm install -g npm@2 && npm install && nvm use "${TRAVIS_NODE_VERSION}"; else npm install; fi;'
+  - 'if [ "${TRAVIS_NODE_VERSION}" = "0.6" ] || [ "${TRAVIS_NODE_VERSION}" = "0.9" ]; then nvm install --latest-npm 0.8 && npm install && nvm use "${TRAVIS_NODE_VERSION}"; else npm install; fi;'
 script:
   - 'if [ -n "${PRETEST-}" ]; then npm run pretest ; fi'
-  - 'if [ -n "${POSTTEST-}" ]; then npm run posttest ; fi'
+  - 'if [ -n "${AUDIT-}" ]; then npm run audit ; fi'
   - 'if [ -n "${COVERAGE-}" ]; then npm run coverage ; fi'
   - 'if [ -n "${TEST-}" ]; then npm run tests-only ; fi'
 sudo: false
@@ -29,10 +32,106 @@ env:
 matrix:
   fast_finish: true
   include:
-    - node_js: "node"
+    - node_js: "lts/*"
       env: PRETEST=true
+    - node_js: "lts/*"
+      env: AUDIT=true
     - node_js: "4"
       env: COVERAGE=true
+    - node_js: "11.9"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.8"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.7"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.6"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.5"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.4"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.3"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.2"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.1"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "11.0"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.14"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.13"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.12"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.11"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.10"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.9"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.8"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.7"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.6"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.5"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.4"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.3"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.2"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.1"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.0"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.10"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.9"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.8"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.7"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.6"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.5"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.4"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.3"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.2"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.1"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "9.0"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.14"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.13"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.12"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.11"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.10"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.9"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.8"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.7"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.6"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.5"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "8.4"
+      env: TEST=true ALLOW_FAILURE=true
     - node_js: "8.3"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "8.2"
@@ -60,6 +159,16 @@ matrix:
     - node_js: "7.1"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "7.0"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "6.15"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "6.14"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "6.13"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "6.12"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "6.11"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "6.10"
       env: TEST=true ALLOW_FAILURE=true
@@ -106,6 +215,8 @@ matrix:
     - node_js: "5.1"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "5.0"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "4.8"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "4.7"
       env: TEST=true ALLOW_FAILURE=true
