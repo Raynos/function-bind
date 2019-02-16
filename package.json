@@ -37,6 +37,9 @@
     "pretest": "npm run lint",
     "test": "npm run tests-only",
     "posttest": "npm run coverage -- --quiet",
+    "preaudit": "npm install --package-lock --package-lock-only",
+    "audit": "npm audit",
+    "postaudit": "rm package-lock.json",
     "tests-only": "node test",
     "coverage": "covert test/*.js",
     "lint": "eslint ."
