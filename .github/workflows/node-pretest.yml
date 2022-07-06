@@ -1,0 +1,12 @@
+name: 'Tests: pretest/posttest'
+
+on: [pull_request, push]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    permissions:
+      contents: none
+    uses: ljharb/actions/.github/workflows/pretest.yml@main
