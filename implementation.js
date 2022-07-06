@@ -25,12 +25,12 @@ module.exports = function bind(that) {
                 return result;
             }
             return this;
-        } else {
-            return target.apply(
-                that,
-                args.concat(slice.call(arguments))
-            );
         }
+        return target.apply(
+            that,
+            args.concat(slice.call(arguments))
+        );
+
     };
 
     var boundLength = Math.max(0, target.length - args.length);

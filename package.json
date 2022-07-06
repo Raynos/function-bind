@@ -26,10 +26,10 @@
     "email": "raynos2@gmail.com"
   },
   "devDependencies": {
-    "@ljharb/eslint-config": "^17.1.0",
+    "@ljharb/eslint-config": "^21.0.0",
     "covert": "^1.1.1",
-    "eslint": "^7.3.0",
-    "tape": "^5.0.1"
+    "eslint": "=8.8.0",
+    "tape": "^5.5.3"
   },
   "license": "MIT",
   "scripts": {
