@@ -10,7 +10,7 @@
   ],
   "author": "Raynos <raynos2@gmail.com>",
   "repository": "git://github.com/Raynos/function-bind.git",
-  "main": "index",
+  "main": "index.js",
   "homepage": "https://github.com/Raynos/function-bind",
   "contributors": [
     {
