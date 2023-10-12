@@ -9,7 +9,13 @@
     "es5"
   ],
   "author": "Raynos <raynos2@gmail.com>",
-  "repository": "git://github.com/Raynos/function-bind.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Raynos/function-bind.git"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/ljharb"
+  },
   "main": "index",
   "homepage": "https://github.com/Raynos/function-bind",
   "contributors": [
